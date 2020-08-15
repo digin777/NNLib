@@ -3,7 +3,7 @@ NNLib is a simple Open Souce Neaural Network Framework Created Completely From S
 it is completely written in Python People who instrested in NN can fork me on Git hub 
 and you can contibute to Development of our project 
 
-##It support The Following Activation Functions
+## It support The Following Activation Functions
  - **RELU**
  - **Unit Step**
  - **Sigmoid**
@@ -22,10 +22,10 @@ NNLib
 .\test.py
 ```
 
-###How To Use
+### How To Use
 
 
-```
+```python
 from libs.NeuralNetwork import  NeuralNetwork  #importing Neural Network Module
 from libs.DenseLayer import Layer_Dense  #Dense Layer used to add Layer
 from libs.Tensor import Tensor #Tensor used to create ND Tensor
@@ -48,17 +48,17 @@ nnt. addLayer(Layer_Dense(3,2,act_func=Act_SoftMax))
 out=nnt.fit_data(data)
 ```
 previewing the Output
-```
+```python
 #printing Output
 print(out)
 ```
-```
+```python
 [[0.17747322 0.15586011]
  [0.17747322 0.15586011]
  [0.17747322 0.15586011]]
 ```
-###Ploting the Network Using
-```
+### Ploting the Network Using
+```python
 #Drawing Network
 print(nnt.draw_network())
 ```
