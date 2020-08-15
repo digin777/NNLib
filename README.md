@@ -9,6 +9,7 @@ and you can contibute to Development of our project
  - **Sigmoid**
  - **Tanh**
  - **SoftMax**
+
 The Module structure 
 ```
 NNLib
@@ -20,9 +21,11 @@ NNLib
 .\README.md
 .\test.py
 ```
-##How To Use
 
-'''
+###How To Use
+
+
+```
 from libs.NeuralNetwork import  NeuralNetwork  #importing Neural Network Module
 from libs.DenseLayer import Layer_Dense  #Dense Layer used to add Layer
 from libs.Tensor import Tensor #Tensor used to create ND Tensor
@@ -43,23 +46,23 @@ nnt. addLayer(Layer_Dense(3,2,act_func=Act_SoftMax))
 
 #Trainig Data
 out=nnt.fit_data(data)
-'''
+```
 previewing the Output
-'''
+```
 #printing Output
 print(out)
-'''
-'''
+```
+```
 [[0.17747322 0.15586011]
  [0.17747322 0.15586011]
  [0.17747322 0.15586011]]
-'''
+```
 ###Ploting the Network Using
-'''
+```
 #Drawing Network
 print(nnt.draw_network())
-'''
-'''
+```
+```
 ReLu  -> Sigmoid  -> TanH  -> Unit  -> SoftMax
-'''
+```
 
