@@ -32,37 +32,62 @@ from libs.Tensor import Tensor #Tensor used to create ND Tensor
 
 from libs.ActivationFunctions import Act_RELU,Act_Sigmoid,Act_Tanh,Act_Unit,Act_SoftMax #importing Activation Functions
 
-data=Tensor([[1,2,3,2.5],
-	[2.0,5.0,-1.0,2.0],
-	[-1.5,2.7,3.3,-0.8]]) #creating an Tensor
-
+X=Tensor([[1,0,1,1],
+	  [0,0,1,1],
+	  [1,1,1,0]]) #creating an Tensor
+Y=Tensor([[1,1,1],[1,0,1],[0,1,1]])
 nnt=NeuralNetwork() #Create an Neaural Network Object
 #adding Layers
-nnt. addLayer(Layer_Dense(4,5,act_func=Act_RELU))
-nnt. addLayer(Layer_Dense(5,2,act_func=Act_Sigmoid))
-nnt. addLayer(Layer_Dense(2,5,act_func=Act_Tanh))
-nnt. addLayer(Layer_Dense(5,3,act_func=Act_Unit))
-nnt. addLayer(Layer_Dense(3,2,act_func=Act_SoftMax))
-
+nnt. addLayer(Layer_Dense(4,3,act_func=Act_Sigmoid))
 #Trainig Data
-out=nnt.fit_data(data)
+out=nnt.fit_data(X,Y)
 ```
-previewing the Output
+Predicting the Output
 ```python
+test=Tensor([[1,0,1,1]])
+out=nnt.predict(test)
 #printing Output
 print(out)
 ```
 ```python
-[[0.17747322 0.15586011]
- [0.17747322 0.15586011]
- [0.17747322 0.15586011]]
+[[0.94289458 0.90514702 0.98781461]]
 ```
 ### Ploting the Network Using
 ```python
 #Drawing Network
-print(nnt.draw_network())
+nnt.draw_network()
 ```
 ```
-ReLu  -> Sigmoid  -> TanH  -> Unit  -> SoftMax
+Sigmoid
 ```
+### printing Network
+```python
+#Printing Network
+nnt.print_network()
+```
+```
+========== Neural Net ==========
+no of input 1 Act Function Sigmoid no of neurons 4
+================== ==================
+```
+### Trainig Process
 
+```
+epoach  -> {1483} Loss <-> 0.049105531402673826
+epoach  -> {1484} Loss <-> 0.04908684302542737
+epoach  -> {1485} Loss <-> 0.049068174697725085
+epoach  -> {1486} Loss <-> 0.04904952638463827
+epoach  -> {1487} Loss <-> 0.049030898051322006
+epoach  -> {1488} Loss <-> 0.04901228966301513
+epoach  -> {1489} Loss <-> 0.04899370118503974
+epoach  -> {1490} Loss <-> 0.04897513258280106
+epoach  -> {1491} Loss <-> 0.04895658382178705
+epoach  -> {1492} Loss <-> 0.04893805486756845
+epoach  -> {1493} Loss <-> 0.04891954568579809
+epoach  -> {1494} Loss <-> 0.04890105624221108
+epoach  -> {1495} Loss <-> 0.0488825865026244
+epoach  -> {1496} Loss <-> 0.04886413643293635
+epoach  -> {1497} Loss <-> 0.04884570599912682
+epoach  -> {1498} Loss <-> 0.048827295167256826
+epoach  -> {1499} Loss <-> 0.04880890390346789
+```
